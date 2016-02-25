@@ -4,11 +4,8 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname, '/public')));
 
-app.get('/', function (req, res) {
-
-});
 
 
 var server = app.listen(3000, function() {
