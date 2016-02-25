@@ -3,9 +3,11 @@ var myApp = angular.module('myApp');
 
 myApp.controller('MyController', [
   '$scope', 
-  'mainCharacter', 
-  function ($scope, mainCharacter) {
+  'mainCharacter',
+  'CharacterVersionFactory', 
+  function ($scope, mainCharacter, CharacterVersionFactory) {
   $scope.myFirstName = "Ben";
   $scope.myModel = "Ready Player One!";
   $scope.mainCharacter = mainCharacter;
+  $scope.characterVersion = CharacterVersionFactory;
 }]);
