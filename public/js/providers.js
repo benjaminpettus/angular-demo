@@ -2,25 +2,17 @@ var myApp = angular.module('myApp');
 
 myApp.provider('Movies', 
   function () {
-    this.endpoint = null; 
+    var _endpoint = null; 
     this.setEndpoint = function (endpoint) {
-      this.endpoint = endpoint;
+      _endpoint = endpoint;
     };
-    this.$get = function () {
-      //TODO: /fix $http not defined
-      // return $http({
-      //   method: 'GET',
-      //   url: this.setEndpoint
-      // })
-      // .then(function (response) {
-      //   console.log(response); 
-      //   return response.data;
-      // });
-      return [
-      { title: 'Harry Potter: Sorcerer\'s Stone'},
-      { title: 'Harry Potter: Chamber of Secrets'},
-      { title: 'Harry Potter: Prisoner of Azkaban'},
-      ];
+    this.$get = function ($http) {
+     var _this = this;
+      return {
+        get: function () {
+          return $http({method: 'GET', url: _endpoint});
+        }
+      };
     };
   }
 );

@@ -5,9 +5,9 @@ var myApp = angular.module('myApp');
 
 
 myApp
-  .config(function () {
+  .config(function (MoviesProvider) {
     //set up configuration
-    
+    MoviesProvider.setEndpoint('/api');
   })
   .run([
     '$rootScope',
