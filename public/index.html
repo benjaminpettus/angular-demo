@@ -4,60 +4,19 @@
   <title></title>
 </head>
 <body ng-app="myApp">
+  <a href="/#/">Intro</a>
+  <a href="/#/books">Books</a>
+  <a href="/#/movies">Movies</a>
 <div ng-view></div>
-  {{"Hello " + "Angular!"}}
-  <div>
-    {{2 + 3}}
-  </div>
 
-  <div ng-controller="MyController">
-  <input type="text" ng-model="myModel">
-  <div>
-    My Model: {{ myModel }}
-  </div>
-    My First Name: {{ myFirstName }}
-    Main Character: {{ mainCharacter }}
-    Character Version: {{characterVersion}}
 
-    <form>
-      <input type="text" ng-model="title">
-      <input type="text" ng-model="author">
-      <button ng-click="BookService.addBook(title, author); title=''; author='';">
-        Add Book
-      </button>
-    </form>
-    <h1>Search books by: {{searchBookTitle}}</h1>
-    <input type="text" ng-model="searchBookTitle" placeholder="Book Title">
-    <ul>
-      <li class="book special" ng-repeat="book in books | filter:{title:searchBookTitle} | orderBy:'-title'">
-        <h4 class="book_title">{{book.title}}</h4>
-        <p class="book_author">{{book.author}}</p>
-      </li>
-    </ul>
-    {{movies}} 
-    <h1>Movies 1983</h1>
-    <ul>
-      <li ng-repeat="movie in movies | filter:{year: 1983}">
-        <h4 class='movie_title'>{{movie.title}}</h4>
-        <p class="movie_year">{{movie.year}}</p>
-        
-      </li>
-    </ul>
-    <h1>Movies before {{beforeYear}}</h1>
-    <input type="number" ng-model="beforeYear" ng-init="beforeYear=2003">
-    <ul>
-      <li ng-repeat="movie in movies | beforeYearFilter: beforeYear | orderBy:'+year -title'">
-        <h4 class='movie_title'>{{movie.title}}</h4>
-        <p class="movie_year">{{movie.year}}</p>
-        
-      </li>
-    </ul>
-  </div>
+ 
 
 
   Version {{ version }}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.js"></script>
   <script src="/js/myApp.js" type="text/javascript"></script>
   <script src="/js/constants.js" type="text/javascript"></script> 
   <script src="/js/values.js" type="text/javascript"></script>
