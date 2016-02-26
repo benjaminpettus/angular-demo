@@ -28,7 +28,7 @@
     <h1>Search books by: {{searchBookTitle}}</h1>
     <input type="text" ng-model="searchBookTitle" placeholder="Book Title">
     <ul>
-      <li class="book special" ng-repeat="book in books | filter:{title:searchBookTitle}">
+      <li class="book special" ng-repeat="book in books | filter:{title:searchBookTitle} | orderBy:'-title'">
         <h4 class="book_title">{{book.title}}</h4>
         <p class="book_author">{{book.author}}</p>
       </li>
@@ -45,7 +45,7 @@
     <h1>Movies before {{beforeYear}}</h1>
     <input type="number" ng-model="beforeYear" ng-init="beforeYear=2003">
     <ul>
-      <li ng-repeat="movie in movies | beforeYearFilter: beforeYear">
+      <li ng-repeat="movie in movies | beforeYearFilter: beforeYear | orderBy:'+year -title'">
         <h4 class='movie_title'>{{movie.title}}</h4>
         <p class="movie_year">{{movie.year}}</p>
         
