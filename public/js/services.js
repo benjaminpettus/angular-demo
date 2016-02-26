@@ -3,12 +3,21 @@ var myApp = angular.module('myApp');
 myApp.service('BookService', BookService);
 
 function BookService () {
-  var books = [
+  var books = this.books = [
   { title: 'Ready Player One', author: 'some guy'}, 
   { title: 'Origins', author: 'some guy'}, 
   { title: 'Harry Potter',  author: 'some guy'},
   { title: 'Hunger Games', author: 'some guy'}
   ]; 
+
+  this.addBook = function (title, author) {
+    var newBook = {
+      title: title,
+      author: author
+    };
+    books.push(newBook);
+  };
+
   this.getBooks = function (){
     return books;
   };
