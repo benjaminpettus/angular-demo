@@ -7,7 +7,7 @@ myApp.provider('Movies',
       _endpoint = endpoint;
     };
     this.$get = function ($http) {
-     var _this = this;
+  
       return {
         get: function () {
           return $http({method: 'GET', url: _endpoint});
