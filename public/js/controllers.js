@@ -14,7 +14,7 @@ myApp.controller('MyController', [
     $scope.characterVersion = CharacterVersionFactory;
     $scope.books = BookService.getBooks();
     $scope.BookService = BookService;
-    $scope.Movies = [];
+    $scope.movies = [];
     Movies.get().then(function (response) {
       $scope.movies = response.data;
     });
