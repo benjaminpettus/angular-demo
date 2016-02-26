@@ -25,8 +25,10 @@
         Add Book
       </button>
     </form>
+    <h1>Search books by: {{searchBookTitle}}</h1>
+    <input type="text" ng-model="searchBookTitle" placeholder="Book Title">
     <ul>
-      <li class="book special" ng-repeat="book in books">
+      <li class="book special" ng-repeat="book in books | filter:{title:searchBookTitle}">
         <h4 class="book_title">{{book.title}}</h4>
         <p class="book_author">{{book.author}}</p>
       </li>
